@@ -1,0 +1,574 @@
+{% load static %}
+<html>
+<title> Website Template </title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+   <style>
+      
+    main {
+      width: 100%;
+      height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    
+    section h3 {
+      font-size: 35px;
+      font-weight: 200;
+      letter-spacing: 3px;
+      text-shadow: 1px 1px 2px black;
+    }
+    
+    section h1 {
+      margin: 30px 0 20px 0;
+      font-size: 55px;
+      font-weight: 700;
+      text-shadow: 2px 1px 5px black;
+      text-transform: uppercase;
+    }
+    
+    section p {
+      font-size: 25px;
+      word-spacing: 2px;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 1px black;
+    }
+    
+    section a {
+      padding: 12px 30px;
+      border-radius: 4px;
+      outline: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.5s ease;
+    }
+    
+    section .btnone {
+      /*background: #00b894;*/
+      background: #fff;
+      color: #000;
+    }
+    
+    .btnone:hover {
+      background: #00b894;
+      color: white;
+    }
+    
+    section .btntwo {
+      background: #00b894;
+      color: white;
+    }
+    
+    .btntwo:hover {
+      background: #fff;
+      color: #000;
+    }
+    
+    .change_content:after {
+      content: "";
+      animation: changetext 10s infinite linear;
+      color: #00b894;
+    }
+    
+    @keyframes changetext {
+      0% {
+        content: "POORNIMA UNIVERSITY";
+      }
+      20% {
+        content: "PCE";
+      }
+      35% {
+        content: "PIET";
+      }
+      60% {
+        content: "PGI";
+      }
+     
+    }
+    
+
+
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         outline: 0;
+       }
+       
+       input,
+       textarea,
+       button,
+       select, img, span,
+       a {
+         -webkit-tap-highlight-color: rgba(0,0,0,0);
+          outline: 0;
+       }
+       
+       /*Fonts from external source*/
+       @font-face {
+         src: url(C:\Users\Home\AppData\Local\Temp\atom-118019-14536-1ea9572.rtm9ozuxr\league-spartan.zip\LeagueSpartan-Bold.otf);
+         font-family: League Spartan;
+       }
+       /*Fonts from external source*/
+       
+       
+       
+       /*Navigation Bar*/
+       .logo {
+         position: absolute;
+         margin-top: 15px;
+         font-size: 16px;
+         margin-left: 13px;
+       }
+       
+       .logo h1 {
+          font-family: Segoe UI, Helvetica, calibri, serif;
+          margin-top: 4px;
+       }
+       
+       #menu {
+         position: absolute;
+         right: 20px;
+         top: 17px;
+         cursor: pointer;
+         display: none;
+       }
+       
+       #close {
+          position: absolute;
+          top: 17px;
+          right: 20px;
+          cursor: pointer;
+          display: none;
+       }
+       
+       nav ul {
+         display: block;
+         float: right;
+         overflow: hidden;
+         margin: 7px 0;
+         margin-right: 10px;
+       }
+       
+       nav ul li {
+         list-style-type: none;
+         float: left;
+         text-align: center;
+         padding: 10px;
+         font-family: 'Roboto', Helvetica, sans-serif;
+         font-size: 17px;
+       }
+       
+       nav ul li a {
+         text-decoration: none;
+         color: black;
+       }
+       
+       @media screen and (max-width: 617px) {
+         .logo {
+           margin-top: 7px;
+           position: relative;
+           overflow: hidden;
+           display: block;
+           font-size: 14px;
+         }
+          .logo h1 {
+             position: relative;
+             margin-bottom: 10px;
+          }
+         nav {
+           width: 100vw;
+           height: 100vh;
+           display: none;
+         }
+         nav ul {
+           padding-top: 20px;
+           display: block;
+           width: 100%;
+           margin: auto;
+         }
+         .nav-expanded {
+           display: block;
+         }
+         nav ul li {
+           float: none;
+           border-bottom: 2px solid #D8D8D8;
+         }
+         nav ul li:last-child {
+           border-bottom: none;
+         }
+         #menu {
+           display: block;
+         }
+       }
+       /*Navigation Bar*/
+       
+       
+       
+       /*Hero Image*/
+       header {
+         width: 100vw;
+         height: 95vh;
+         background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url({% static 'pic.jpg' %});
+         background-size: cover;
+         background-attachment: fixed;
+         background-repeat: no-repeat;
+         background-position: center;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+       }
+       
+       .header-text {
+         width: 500px;
+         text-align: center;
+       }
+       
+       header h1 {
+         margin-bottom: 10px;
+         font-family: League Spartan, sans-serif;
+         font-weight: 500;
+         font-size: 45px;
+         color: white;
+       }
+       
+       #photography {
+         font-size: 60px;
+         letter-spacing: 0.5px;
+       }
+       
+       header p {
+         margin-bottom: 20px;
+         font-family: 'Open Sans', Helvetica, sans-serif;
+         color: white;
+         font-size: 18px;
+       }
+       
+       header button {
+         border: 2px solid white;
+         color: white;
+         font-family: 'Roboto', Segoe UI, calibri, Helvetica, serif;
+         padding: 10px;
+         font-size: 18px;
+         width: 160px;
+         border-radius: 500px;
+         cursor: pointer;
+         background-color: transparent;
+         transition: all 0.2s ease-in-out;
+       }
+       
+       header button:hover, button:active {
+         background-color: white;
+         color: black;
+       }
+       
+       @media screen and (max-width: 676px) {
+         .header-text {
+           width: 95%;
+           text-align: center;
+         }
+       }
+       
+       @media screen and (max-width: 601px) {
+         #photography {
+           font-size: 45px;
+         }
+         header h1 {
+           font-size: 30px;
+         }
+         header p {
+           font-size: 15px;
+           width: 85%;
+           display: block;
+           margin: auto;
+           margin-bottom: 20px;
+         }
+         header button {
+           font-size: 16px;
+           width: 140px;
+         }
+       }
+       
+       @media screen and (max-width: 460px) {
+         #photography {
+           font-size: 35px;
+         }
+         header h1 {
+           font-size: 28px;
+         }
+       }
+       /*Hero Image*/
+
+       .bg-grey {
+        background: #292929;
+     }
+     .logo-footer {
+        margin-bottom: 40px;
+     }
+     footer {
+            color: grey;
+     }
+     footer p, a {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+footer h6 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+    position: relative;
+}
+footer h6:after {
+    position: absolute;
+    content: "";
+    background: grey;
+    width: 12%;
+    height: 1px;
+    left: 0;
+    bottom: -20px;
+}
+     .btn-footer {
+                 color: grey;
+              
+                text-decoration: none;
+                border: 1px solid;
+                border-radius: 43px;
+                font-size: 13px;
+                padding: 7px 30px;
+                line-height: 47px;
+     }
+     .btn-footer:hover {
+                
+                text-decoration: none;
+               
+     }
+    .form-footer input[type="text"] {
+        border: none;
+    border-radius: 16px 0 0 16px;
+    outline: none;
+    padding-left: 10px;
+    
+}
+::placeholder {
+    font-size: 10px;
+    padding-left: 10px;
+    font-style: italic;
+}
+ .form-footer input[type="button"] {
+    border: none;
+    background:#232323;
+        margin-left: -5px;
+    color: #fff;
+    outline: none;
+    border-radius: 0 16px 16px 0;
+    padding: 2px 12px;
+}
+     .social .fa {
+    color: grey;
+    font-size: 22px;
+    padding: 10px 15px;
+    background: #3c3c3c;
+}
+     footer ul li {
+    list-style: none;
+    display: block;
+}
+  footer ul  {
+   padding-left: 0;
+}
+footer ul  li a{
+  text-decoration: none;
+  color: grey;
+  text-decoration:none;
+}
+a:hover {
+    text-decoration: none;
+    color: #f5f5f5 !important;
+    
+}
+.logo-part {
+    border-right: 1px solid grey;
+    height: 100%;
+    }
+       
+       
+   </style>
+</head>
+
+<body>
+   
+  {% for messages in messages %}
+<div class ="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+     <strong> Message : </strong> {{ message }}
+     <button type ="button" class="close" data-dismiss="alert" arial-label="Close">
+         <span arial-hidden="true">&times;</span>
+     </button>
+    </div>
+
+{% endfor %}
+<!--Navigation Bar-->
+  <div class="logo">
+    <h1> CHATBOT</h1>
+  </div>
+   <span id="close"> <img style="width: 25px;" src="http://www.pvhc.net/img5/onbbqnqzkjrtvirmiqnp.png" alt="CLOSE"> </img> </span>
+  <span id="menu"> <img style="width: 25px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR11WXR-a18XfNZknL7S4lu0lLyC4aWZPY4sLd4wNHUNv9So2gd" alt="MENU"> </span>
+  <nav>
+    <ul>
+      <li> <a href="#"> HOME </a> </li>
+      <li> <a href="#"> {{request.user}} </a> </li>
+      <li> <a href="/chat"> CHAT </a> </li>
+      <li> <a href="#"> CONTACT </a> </li>
+    </ul>
+  </nav>
+<!--Navigation Bar-->
+
+
+<!--Hero Image-->
+  <header>
+    <div class="header-text">
+    <h1>ASK YOUR <br><span id="photography"> QUERY </span></h1>
+    <button> Learn More </button>
+    </div>
+  </header>
+  <!--Hero Image-->
+  <main>
+		<section>
+			<h3>Welcome To Poornima</h3>
+			<h1>DO COME & VISIT <span class="change_content"> </span> <span style="margin-top: -10px;"> | </span> </h1>
+			<p>"poornima once is not enough"</p>
+			<a href="#" class="btnone">learn more</a>
+			<a href="#" class="btntwo">signup here</a>
+		</section>
+	</main>
+
+  <footer class="container-fluid bg-grey py-5">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-6">
+             <div class="row">
+                <div class="col-md-6 ">
+                   <div class="logo-part">
+                      <img src="https://i.ibb.co/sHZz13b/logo.png" class="w-50 logo-footer" >
+                      <p>7637 Laurel Dr. King Of Prussia, PA 19406</p>
+                      <p>Use this tool as test data for an automated system or find your next pen</p>
+                   </div>
+                </div>
+                <div class="col-md-6 px-4">
+                   <h6> About Company</h6>
+                   <p>But horizontal lines can only be a full pixel high.</p>
+                   <a href="#" class="btn-footer"> More Info </a><br>
+                   <a href="#" class="btn-footer"> Contact Us</a>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-6">
+             <div class="row">
+                <div class="col-md-6 px-4">
+                   <h6> Help us</h6>
+                   <div class="row ">
+                      <div class="col-md-6">
+                         <ul>
+                            <li> <a href="#"> Home</a> </li>
+                            <li> <a href="#"> About</a> </li>
+                            <li> <a href="#"> Service</a> </li>
+                            <li> <a href="#"> Team</a> </li>
+                            <li> <a href="#"> Help</a> </li>
+                            <li> <a href="#"> Contact</a> </li>
+                         </ul>
+                      </div>
+                      <div class="col-md-6 px-4">
+                         <ul>
+                            <li> <a href="#"> ADMISSION</a> </li>
+                            <li> <a href="#"> PLACEMENTS</a> </li>
+                            <li> <a href="#"> Terms</a> </li>
+                            <li> <a href="#"> Policy</a> </li>
+                            
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-6 ">
+                   <h6> Newsletter</h6>
+                   <div class="social">
+                      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                   </div>
+                   <form class="form-footer my-3">
+                      <input type="text"  placeholder="search here...." name="search">
+                      <input type="button" value="Go" >
+                   </form>
+                   <p>That's technology limitation of LCD monitors</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    </footer>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+   jQuery(document).ready(function() {
+      jQuery("#menu").click(function () {
+        jQuery("nav").slideToggle(400, function () {
+          jQuery(this).toggleClass("nav-expanded").css('display', '');
+        });
+      });
+    });
+    
+    jQuery(document).ready(function() {
+      jQuery("#close").click(function () {
+        jQuery("nav").slideToggle(400, function () {
+          jQuery(this).toggleClass("nav-expanded").css('display', '');
+        });
+      });
+    });
+    
+    var menu = document.getElementById("menu");
+    var close = document.getElementById("close");
+    
+    menu.addEventListener('click', showClose);
+    
+    function showClose () {
+       var menu = document.getElementById("menu");
+       var close = document.getElementById("close");
+       menu.style.display = "none";
+       close.style.display = "block";
+    }
+    
+    
+    close.addEventListener('click', showMenu);
+    
+    function showMenu () {
+       var menu = document.getElementById("menu");
+       var close = document.getElementById("close");
+       menu.style.display = "block";
+       close.style.display = "none";
+    }
+   })();
+   
+
+    
+</script>
+</html>
